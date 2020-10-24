@@ -1,2 +1,2 @@
-touch $1
-chmod +x $1
+touch $1	#creates new file
+chmod +x $1	#changes perm to +x
