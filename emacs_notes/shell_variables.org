@@ -1,0 +1,28 @@
+* Name variables 
+  The name of a variable can contain only letters (a to z or A to Z), numbers ( 0 to 9) or the underscore character ( _).
+  shell variables will have their names in UPPERCASE.
+  The following examples are valid variable names −
+  _ALI
+  TOKEN_A
+  VAR_1
+  VAR_2
+* DEFINING VARIABLES:
+  scalar variable (can hold only one value)variable_name=variable_value	
+  ex: NAME="nick c"
+* ACCESSING VALUES:
+  To access the value stored in a variable, prefix its name with the dollar sign $NAME
+  ex: 	NAME="nick c"
+	echo $NAME
+	ouput would be: nick c
+* READ ONLY VARIABLES:
+  Shell provides a way to mark variables as read-only by using the read-only command. After a variable is marked read-only, its value cannot be changed.
+  ex:	NAME="nick c"
+	readonly NAME
+* unset a defined variable: 
+  unset NAME
+
+* VAIRABLE TYPES:
+  Local Variables − A local variable is a variable that is present within the current instance of the shell. It is not available to programs that are started by the shell. They are set at the command prompt.
+  Environment Variables − An environment variable is available to any child process of the shell. Some programs need environment variables in order to function correctly. Usually, a shell script defines only those environment variables that are needed by the programs that it runs.
+
+

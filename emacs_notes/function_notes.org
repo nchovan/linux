@@ -1,0 +1,27 @@
+* Function formats
+  fuction_name () {
+	<commands>
+  }
+
+  or
+
+  function function_name {
+	<commands>
+  }
+* Basic function
+  1. #!/bin/bash
+  2.
+  3.
+  4. print_something () {
+  5.	echo hello $1
+  6. }
+  7.
+  8. print_somthing mars
+  9. print_something jupiter
+* Basic function output 
+  hello mars
+  hello jupiter
+* Basic function break down
+  Line 4 - We start defining the function by giving it a name.
+  Line 5 - Within the curly brackets we may have as many commands as we  like.
+  Lines 8 and 9 - Once the function has been defined, we may call it as many times as we like and it will execute those commands.

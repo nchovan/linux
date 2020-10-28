@@ -1,0 +1,29 @@
+* FINDING FILES BY SIZE:
+* size switched for search:
+  C for bytes
+  W for two-byte words
+  K for kilobytes
+  M for megabytes
+  G for gigabytes
+* Find file by size
+** Find files bigger than 
+  find / -type f -size +1G
+  this case files larger than 1 gig
+** Find file bigger than (current dir)
+   find . -type f -size +1G
+** Find files bigger than (specific dir) 
+   find Downloads/ -type f -size +1G
+** Find files smaller than
+   same as greater than just use -
+** Find files by size (bigger than)
+   find +size 30M
+** Find files by size (smaller than)
+   same as bigger than just use -
+** Find file by size (range from - to +)
+   find . -type f -size +10M -size -20M
+* Find files by modified date
+   find ~ -type f -name "*" -newermt 2020-10-20 ! -newermt 2020-02-23     	(return no output or error)
+
+
+
+

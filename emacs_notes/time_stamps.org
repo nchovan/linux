@@ -1,0 +1,44 @@
+* Timetsamps
+  Every Linux file has three timestamps: the access timestamp (atime), the modified timestamp (mtime), and the changed timestamp (ctime).
+** Access timestamp
+   is the last time a file was read. This means someone used a program to display the contents of the file or read some values from it. Nothing was edited or added to the file. The data was referenced but unchanged.
+** Modified timestamp
+   signifies the last time the contents of a file were modified. A program or process either edited or manipulated the file. “Modified” means something inside the file was amended or deleted, or new data was added.
+** Changed timestamp
+   aren’t referring to changes made to the contents of a file. Rather, it’s the time at which the metadata related to the file was changed. File permission changes, for example, will update the changed timestamp.
+** (Extra) file creation timestamp
+   The standard ext4 Linux file system also allocates space for a file-creation timestamp in its internal file system structures, but this hasn’t been implemented yet. Sometimes, this timestamp is populated, but you can’t depend on the values in it.
+* viewing timstamps
+** long list
+   ls -l
+** Access timestamp
+   ls -lu
+** Change timestamp
+   ls -lc
+** All timestamps
+   stat file.txt
+** -500 or -400 at end
+   These are time zone offsets. The file system records the timestamps in UTC and converts them to the local time zone when displayed by stat. 
+* Changing timestamp
+** Set new access timestamp
+   touch -a file.txt   To set a new access timestamp, you would use the -a (access time) option. This command sets the access timestamp to the computer’s current time. The access timestamp changed, as expected. However, the changed timestamp was updated as well; this is normal.
+** Set new modified timestamp
+   touch -m This time, the modified and changed timestamps were updated.
+** Set access and modified to specific date and time
+   touch -d "2020-01-15 10:30:45" file.txt We’ve now set the access and modified timestamps to a date in the past. The changed timestamp was also updated to the current time of the computer.
+** Set timestamps of one file to the value of another file
+   touch file.txt -r file2.txt
+* How the File System Updates Timestamps
+  When a file system is mounted, there are options you can use to specify how that file system should operate or be treated. These are stored in the /etc/fstab file, which is read and processed at boot time. You can also set options to dictate the scheme they should use to update the access timestamp.
+** strictatime (strict atime)
+   This option updates the access timestamp of files every time they’re accessed. There’s an overhead attached with this approach, but some servers can benefit from this scheme. It has little merit on a desktop or laptop computer.
+** noatime (no atime)
+   This option fully disables the access timestamps for files and directories from updating. The modified timestamps, however, will still update.
+** nodiratime (no dir atime)
+   This option enables access timestamps for files to update, but disables it for directories.
+** relatime (relative atime)
+   This option updates the access timestamp only if it was more than 24-hours old, or the previous one was older than the current modified or changed timestamps. This strikes a good balance between access timestamps updating too frequently or not updating at all.
+
+
+
+

@@ -1,0 +1,9 @@
+*bitbucket notes
+*Commands
+ add all new files: git add --all .
+ remove a file: git rm filename
+ commit changes: git commit -m 'commit message'
+ push files to git: git push
+
+
+

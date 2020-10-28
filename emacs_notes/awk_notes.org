@@ -1,0 +1,25 @@
+* awk Notes
+  Awk is used in manipulating data and generating reports
+* specify speperator
+  awk -F: specifies that the character : is to be used as the field seperator
+* variables
+  whole line:   $0
+  first field:  $1
+  second field: $2
+  third field:  $3
+  etc....
+** declare a variable
+   -v will allow you to set a viaribale var=value
+* awk from files
+  -f: It reads the source code of the script written on the awk command
+* print single column  
+  awk 'F: '{print $1}' test.txt      #prints the first column 
+* print multiple columns
+  awk -F: '{print $1,"\t"$4}' test.txt     #prints columns 1 and 4 with a tab between from test.txt file
+* multiple commands
+  echo "hello tom" | awk '{$2="adam"; print $0}'
+  awk will change field 2 from tom to adam when it is printed
+* header and footer
+  awk 'BEGIN {print "the file contains:"}    #makes a header that says "the file contains"
+  {print $0}
+  END {print "file footer"}' test.txt     #makes a footer that says "file footer"
