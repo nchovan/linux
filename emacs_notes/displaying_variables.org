@@ -1,0 +1,33 @@
+* VARIABLE FORMATS:
+  KEY=value
+  KEY="Some other value"
+  KEY=value1:value2
+  names are case sensative, enviromental should be UPPER, no space around =
+* LIST ENVIROMENTAL VARIABLES:
+  print enviromental variable: printenv home
+	output will be /home/nicholas
+  print multiple env: printenv LANG HOME
+	output will be:	en_us
+			/home/nicholas
+* COMMON ENV VARIABLES:
+  USER - the current logged in user
+  HOME - home directory
+  EDITOR - default editor to be used when using edit in terminal
+  SHELL - path of the current user's shell, such as /bin/bash
+  LOGNAME - name of current user
+  PATH - list of dir to br searched when executing commands
+  LANG - current language setting
+  TERM - current terminal emulation
+  MAIL - location of where current user's mail is stored
+* list all variables, shell, env, shell functions: 
+  set | less print shell variable: echo $BASH_VERSION
+* SETTING VARIABLES:
+  create a shell variable: MY_VAR='linuxize'
+	echo $MY_VAR output will be linuxize
+  set env variable: export MY_VAR
+	printenv MY_VAR	output will be linuxize
+* PERSISTENT VARIABLES: (permanent)
+  env variables: save in /etc/environment
+  user shell spacific: save in ~/.bashrc
+
+

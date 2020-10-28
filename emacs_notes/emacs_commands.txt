@@ -1,0 +1,31 @@
+ORG NOTES:
+
+exit Cx C-c (hold ctrl hit x then c)
+new file / open file: C-x C-f (hold ctrl, push x then f)
+save file: C-x C-s (hold ctrl, push x then s)
+edit org file: emacs ~/Documents/1.org
+esc: gets back to typing mode
+
+enable org mode current file: M-x org-mode (hold alt, press x the type org-mode
+add to top of file for org mode: MY PROJECT -*- mode: org -*-
+
+todo lists:
+close item: C-c C-t (hold ctrl, press x then t)
+add new item: M-shift-RET (atl, m, shift, enter)
+
+HEADLINES:
+* - beggins first first level heading
+** - second level nested 
+*** - third level nested
+
+install web links [[http://staff.science.uva.nl~dominik/Tools/orh/)(org-mode home page.]]
+
+execute web links: move cursor over link and hit C-c C-o
+
+shift + tab collapses and expands all
+if you hit tab again while still holding shift continues to expand
+
+tab: expand and collapse single headlines/headers
+
+
+

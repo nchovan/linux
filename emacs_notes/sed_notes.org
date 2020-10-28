@@ -1,0 +1,39 @@
+* expressions
+  -n	quiet, supresses automatic printing of pattern space
+  -e	expression, add the script to the commands to be executed
+  -f 	file, add the contents of script-file to the commands to be executed
+	follow, follow symlinks when processing in place; hard links will still be broken
+  -i[suffix]	*inplace, edit files in place (makes backup if extension supplied)
+  -c	copy
+  -r 	regex-extended, use extended reg expression in script
+  s	substitute
+  p	print
+  g	global, used to search whole line not just first match in line/string
+* SELECTING:
+  select lines: sed -n '1,4p' file.txt  will use p to print lines 1 through 4
+  multiple selections: sed -n -e '1,4p' -e '31,34p' file.txt  *uses -e to make multiple selections
+  start point and alternate: sed -n '1~2p' file.txt  *uses ~ to select a start line and then alternate the print, so this one starts on line 1 and prints every second line
+  lines starting with: sed -n '/^And /p' file.txt  prints lines starting with and
+* SUBSTITUTIONS:
+  first match: sed -n 's/day/week/' file.txt  *s substitutes week for day the first time it finds it on a line 
+  global(whole thing): sed -n 's/day/week/ gp' file.txt  *substitues week for day in the whole string not just the first match
+  global case insensitve: sed -n 's/day/week/gip' file.txt  *same as above but incasesensative	
+  global case insensitive diferent way: sed -n 's/[Dd]ay/week/gp' file.txt different way instead of using -i
+  extra spacing: sed -n '1,4 s/  */ /gp' file.txt * searches for an extra space in the text and replaces those two spaces with a single one.
+  multiple substitutions: sed -n -e 's/day/week/gip' -e 's/day/week gip' .filetx  *this will make two substitutions
+  multiple subs different: sed -n -e 's/day/week/gip;s/day/week/gip' .filetxt same as above method just with ; instead of second -e
+  patters: sed -n '/after/ s/[Dd]ay/week/gp' .file.txt *will only change day to week on lines that match the pattern we want.
+  cut: sed '/neck/c Around my wrist was strung' file.txt  *will search for a line with the word neck in it, then delete the whole line and replace it with the new text.
+  insert below: sed '/He/Inserted!' file.txt  *will add a new line that says Inserted! after any line containg he
+  insert above: sed '/He/i Inserted!' file.txt *inserts above using i option
+  insert at begging on line: sed 's/.*/test &/' file.txt  *inserts test at the begging of everyline
+  blank line: sed 'G' file.txt *adds ablank line between each line
+* DELETING:
+  delete single line: sed '3d' geeks.txt  *deletes the thrid line
+  delete multiple lines: sed '4,6d' geeks.txt *delets lines 4 through 6
+  inverse delete: sed '4,6!d' geeks.txt  *! will dekete everything except lines 4 through 6
+* SAVING:
+  save changes and buckup: sed -i'.bak' '/^.*He.*$/d' geeks.txt *searches anyline containing he, deletes them. then saves the file and makes a backup (geeks.txt.bak) that is untouched original file.
+  <-n-saving changes to new file: sed -i'.bak' '/^.*He.*$/d' geeks.txt > new_geeks.txt *same as above but saves the changes to a new file called new_geek.txt
+
+

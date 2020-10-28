@@ -1,0 +1,26 @@
+* Check current branch
+  git status
+* See what you changed
+  git diff
+* Pushing
+  Creat new branch: git checkout -b note_desc_here
+  Setup new branch: run alias gpush
+  Add and commit: git commit -am 'message'
+  Push to repo: git push
+* Pushing (single file)
+  git add filename.txt
+  git comment -m filename.txt
+  git push
+* Set remote to ssh
+  set ssh as remote: git remote add origin git@github.com:user name/repo name.git
+
+
+
+
+
+
+
+
+
+
+

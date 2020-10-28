@@ -1,0 +1,52 @@
+* Grep	
+  searches within files or output of text
+* If grep doesn't return results or an error 
+  try grep -E
+* Basic syntax of grep is as follows:
+  grep 'word' filename
+  grep [option] 'word' filename
+* grep options:
+  ./*	at the end searches the entire current dir
+  -B 4 	shows 4 lines before matches b 6 shows 6 lines
+  -A 4	same as above bu after match
+  -C 4	shows 4 before and after matches
+  -w 	shows only whole words
+  -o 	shows only the matched string (search 'as' and it will only print the 'as'es)
+  -b 	prints the position of the matched string
+  -c 	to count the repetitions of the matched string(not total count, count of how may strings have matched carater)
+  -H 	to print the filename with the matched string
+  -i 	to print the matched string that is either uppercase or lowercase
+  -n 	to print the line number of file with the line matched
+  -v 	to print those lines which don’t include the matched string
+  -E 	extended
+  -r	recursive searches dir and sub dir
+
+* begging string letter search 
+  ls -l | grep ^d  will search for d at the begging of the string
+* end of string letter seach
+  ls -l | grep d$  will search for d at end of string
+* only results
+  grep -E -o 'll|oo' testfile  will use pipe to search for ll and oo in the test file using the -o(only) option
+* word begging of string 
+  grep -E -i '^am' geeks.txt  will search for am (lower or uppercase) at the begging of any string in the geek file
+* word end of string
+  grep -E -i 'nn$' geeks.txt  will search for nn (upper or lowercase) at the end of the string
+* word start and end letter unspecified length 
+  grep -E 'J.*n ' geeks.txt  will search for any length word that starts with j and ends with n
+* word start and end letter specified length
+* grep -E 'T..m' geeks.txt *will search for any 4 letter word starting with t and ending with m
+* string starting and ending letter
+  grep -E '^[NW]' geeks.txt  would search for any string starting with N or W
+* Or word search 
+  grep -E 'T[oi]m' geeks.txt  *searches for tom or tim
+* Not letter word search
+  grep -E 'T[^o]m' geeks.txt  searches for any 3 letter word where o is not the middle character
+* Or multiple word search
+  grep -E 'T[aeiou]{1,2}m' geeks.txt  searches for any 3 letter or 4 letter word starting with t ending with m and middle of vouls
+* Search multiple words:
+  grep -in 'grep\|awk' file.txt  
+  grep -Ein 'grep|awk' file.txt   same as above 
+* Context above and below word
+  grep -Ein -C 'grep|awk' Linux\ notes  shows grep and awk along with 4 line before and 4 lines after the match. lines number and incasesensative
+
+

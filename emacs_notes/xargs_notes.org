@@ -1,0 +1,4 @@
+* < ls | xargs ls
+  send aray to xargs, then xargs performed a command to each systmeatically
+
+

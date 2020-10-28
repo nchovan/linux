@@ -1,0 +1,11 @@
+* Bring up in interview:
+  tmux
+  vim 
+  dont harp to show how men bond, hr politically correct environment
+
+* To Learn:
+** TODO learn linux
+** DONE understand linux file times
+** TODO learn cron
+** DONE learn emacs + (org mode)
+** TODO leanr python
