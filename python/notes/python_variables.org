@@ -1,0 +1,41 @@
+* 6 types of variables
+  integers - whole numbers
+  foats  - numbers with decimals
+  string - text
+  booleans - hold true or false values
+  tuples - hold groups of different types of information and cannot be changed
+  lists -  hold groups of the same type of date and can be changed at any time.
+
+* assigning variables
+  say_hello = "hello world!" 
+
+  number1 = 5
+  number 2 = 5
+  print (number1+number2)
+
+  the_answer = 6 * 7
+  print (the_number)
+
+** assigning new variable
+   a = 5
+   print (a)
+   1 = 10
+   print (a)
+
+* comparing variables
+  Python also gives you the ability to compare the values of variables and gives you a value of either true or false depending on the comparison
+
+** equal too 
+   a = 6
+   b = 2 * 3
+   print(a == b) # "==" means equal too
+
+   a_string = "Hello"
+   another_string = "Hello"
+   print(a_string == another_string)
+
+** not equal too
+   !=   ex: "Hello" != "Hello!" 
+
+** > (greater than) < (less than)
+** >= (greater than or equal) <= (less than or equal) 

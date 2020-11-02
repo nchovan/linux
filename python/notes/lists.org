@@ -1,0 +1,33 @@
+* creat a list
+  linux_distros = ['Debian', 'Ubuntu', 'Fedora']  #If this was a list of integers or floats, there would be no quotes. Each entry is separated by a comma to ensure that they are read independently.
+
+* navigating lists
+** index  
+   linux_distros = ['Debian', 'Ubuntu', 'Fedora'
+   print(linux_distros[0]) #prints zero 
+   output: Debian
+ 
+   #The example above returns, "Debian," because it is the first entry in the list and has an index of zero. Each entry has a value, referred to as an index, and they count up from zero going down the list
+
+** print index 
+   linux_distros = ['Debian', 'Ubuntu', 'Fedora'
+   print(linux_distros[0]) #prints zero index spot
+   output: Debian
+  
+   print(linux_distros[-2]) #would print Ubuntu because -2 mean going from bottom up twice
+
+** slicing lists
+   linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+   debian_distros = linux_distros[:2] # [:2] means stop before index 2 or the third spot)
+   print(debian_distros)
+   output: ['Debian', 'Ubuntu']
+
+** slicing lists twice
+   linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+   rh_distros = linux_distros[2:4] # this slices out from 2 to stop at 4
+   print(rh_distros)
+   ['Fedora', 'CentOS']
+
+*list methods
+https://linuxconfig.org/python-lists
+

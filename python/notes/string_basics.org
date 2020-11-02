@@ -1,0 +1,29 @@
+* user input
+  user_input = input("Please enter some text: ")
+  print(user_input)
+
+* print with user input
+  name = input("What's your name? ")
+ print("Hello " + name + "!")
+
+* add string before printing
+  name = input("What's your name? ")
+  message_greeting = "Hello " + name + "!"
+  message_compliment = name + " is a nice name."
+  message = message_greeting + "\n " +  message_compliment  #\n is new line
+  print(message)
+
+* print numbers with strings
+  print("The answer is " + str(42)) #str() tells it to print 42 as string
+
+  answer = 42   # The variable "answer" is now an integer
+  answer = str(answer)  # Now it's a string
+
+  answer = 42
+  print("The answer is %d" % answer)  # %d is a placeholder for an integer. There are other placeholders too and The % separates that string from the variable(s) that will be substituted in.
+
+** multiple placeholders
+   first_number = 10
+   second_number = 12.5
+   sum = first_number + second_number
+   print("The sum of %d and %.f is %.2f" % (first_number, second_number, sum))   #the %.2f will only print the float to 2 places after the decimal place

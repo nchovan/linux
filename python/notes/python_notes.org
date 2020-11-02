@@ -1,0 +1,9 @@
+* shebang line
+  #! /usr/bin/python3
+* make sure .py programs are excutable
+  chmod a+x program_name.py
+* check you python version
+  python --version
+* open python interpreter (like command line)
+  python3
+
