@@ -1,5 +1,5 @@
 * FINDING FILES BY SIZE:
-* size switched for search:
+* size switches for search:
   C for bytes
   W for two-byte words
   K for kilobytes
@@ -22,8 +22,43 @@
 ** Find file by size (range from - to +)
    find . -type f -size +10M -size -20M
 * Find files by modified date
-   find ~ -type f -name "*" -newermt 2020-10-20 ! -newermt 2020-02-23     	(return no output or error)
+* common syntaxes
+  If you use “-mtime n” it returns a list last modified
+  If you use "-atime" it returns a list for accessed files
+  If you see "-ctime" it returns a list for changed files
 
+  +n: for greater than n
+  -n: for less than n
+  n: for exactly n
+  See the format below for a better understanding.
+* -mtime
+  -mtime +10: Use this format, if you want to find a file that was modified 10 days ago.
+  -mtime -10: Use this format, if you want to find a file that was modified less than 10 days.
+  -mtime 10: Use this format, if you want to find a file that was modified exactly 10 days ago.
+** Sort Files and Folders in Reverse Order Based on its Conversion Time
+   ls -ltrh path/to/file
+** Sort Only Folders in Reverse Order Based on File Conversion Time
+   ls -ltrh path/to/file | grep ^d
+** Find Only Files That were Modified 120 Days Ago
+   find path/to/file -type f -mtime 120 -ls
+** Find Only Files That was Modified Less Than 15 Days
+   find path/to/file -type f -mtime -15 -ls
+** Find Only Files That were Modified Exactly 10 Days Ago
+   find path/to/file -type f -mtime 10 -ls
+** Find Only Files That Was Modified Less Than 30 Mins
+   find path/to/file -type f -mmin -30 -ls
+* find any txt file ascessed in the last two days (Documents dir)
+  find ~/Documents -iname "*.txt" -atime -2
+* find any txt file modified in the last two days (Documents dir)
+  find ~/Documents -iname "*.txt" -mtime -2
+* find any txt file changed in the last two days (Documents dir)
+  find ~/Documents -iname "*.txt" -ctime -2
+
+
+
+ 
+
+   
 
 
 

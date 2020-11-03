@@ -1,4 +1,33 @@
-* < ls | xargs ls
-  send aray to xargs, then xargs performed a command to each systmeatically
+* xargs
+  xargs can take the output from one command and send it to another command as parameters. this i shelpful when you need to string commands together but one of them doesnt accept piped input.
+* three different data streams
+  These streams work with text. We send input (stdin) to a command using text, and the response (stdout) is written to the terminal window as text. Error messages are also written to the terminal window as text (stderr).
+** standard input stream (stdin)
+   the standard output stream (stdout)
+   the standard error stream (stderr)
+* common syntax
+  xargs [options] [command [initial-arguments]]
+* options
+  --arg-file=file, -a file  Read items from file instead of standard input
+  --null, -0  Input items are terminated by a null character instead of by whitespace, and the quotes and backslash are not special (every character is taken literally)
+  --delimiter=delim, -d delim  Input items are terminated by the specified character. Quotes and backslash are not special; every character in the input is taken literally 
+  -E eof-str  Set the end-of-file string to eof-str. If the end-of-file string occurs as a line of input, the rest of the input is ignored
+  -I replace-str  
+Replace occurrences of replace-str in the initial-arguments with names read from standard input
+  --interactive, -p  Prompt the user about whether to run each command line and read a line from the terminal
+  --verbose, -t  Print the command line on the standard error output before executing it.
+* exit status
+  0	Success.
+  123	Part of the invocation of the command returned a status between 1 and 125.
+  124	The command exited with a status of 255.
+  125	The command was killed by a signal.
+  126	The command could not be run.
+  127	The command was not found.
+  1	Another error of some kind occurred.
+* use ls & xargs to show each dir and its contents (kinda like tree)
+  ls | xargs ls
+* use to get all wc(word count(words, characters, lines)) in multiple files
+  ls *.txt | xargs wc
+  
 
 

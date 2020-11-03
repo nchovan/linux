@@ -1,0 +1,5 @@
+* Symbolic links
+  kinda like a windows shortcut
+* Make a link
+  go into the dir where you want the link
+  use ln command: ln -s target_file link_name

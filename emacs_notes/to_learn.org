@@ -1,0 +1,25 @@
+* interview:
+  tmux
+  emacs (org mode)
+  vim 
+  (be hr politically correct)
+
+* To Learn:
+** DONE learn linux navigation
+** DONE learn about linux file times
+** DONE learn about awk
+** DONE learn about grep
+** DONE learn about if statements
+** DONE learn about sed
+** DONE learn about git
+** DONE learn about links
+** DONE learn about xargs
+** DONE learn about cron
+** DONE learn about command options
+** DONE learn about displaying variable
+** DONE learn about find files by size or modified
+** DONE learn about regex
+** DONE learn about shell variables
+** DONE learn about time stamps
+** DONE learn emacs (org mode)
+** TODO learn python python

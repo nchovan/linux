@@ -13,11 +13,33 @@
   git push
 * Set remote to ssh
   set ssh as remote: git remote add origin git@github.com:user name/repo name.git
+* changing branch
+** check the branches
+   git branch
+** use checkout to switch branches
+   git checkout branch_name
+** use checkout to switch to no existing branch (new branch)
+   git checkout -b newly-created-branch
+   above will switch to a new branch called newly-created
+** use switch to switch branches
+   git switch branch_name
+** use switch to switch to no exitsting branch (new branch)
+   git switch -c newly-created-branch
+   above will switch to a new branch called newly-created
+* changing to remote branch
+** fetch the remote branch
+   git fetch
+** switch to remote branch
+   git checkout -t remote_name/branch_name
+* remote switch example
+  In order to checkout the remote branch, you will need to execute the checkout command and specify the information specified above.
 
+$ git checkout -t origin/remote-branch
 
+Branch 'remote-branch' set up to track remote branch 'remote-branch' from 'origin'.
+Switched to a new branch 'remote-branch'
 
-
-
+As you can see, the remote tracking information was set automatically : as a consequence, if you commit any modifications, you will automatically push them to the upstream branch.
 
 
 

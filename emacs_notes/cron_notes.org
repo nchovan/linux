@@ -1,0 +1,36 @@
+* cron
+  is a built-in automatic scheduler for the Linux operating system and is responsible for running the commands or scripts that are added to the crontab file at a specified time
+* file locations
+  The cron service checks for files in the /var/spool/cron and /etc/cron.d directories and the /etc/anacrontab file. The contents of these files define cron jobs that are to be run at various intervals. The individual user cron files are located in /var/spool/cron, and system services and applications generally add cron job files in the /etc/cron.d directory
+* syntax & diagram
+  Example of job definition:
+   .---------------- minute (0 - 59)
+   |  .------------- hour (0 - 23)
+   |  |  .---------- day of month (1 - 31)
+   |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+   |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR    sun,mon,tue,wed,thu,fri,sat
+   |  |  |  |  |
+   *  *  *  *  * user-name  command to be executed
+* multiple values and ranges
+  Astrics (*) – Matches anything
+  Multiple values – Use command (,) to define multiple values like 2,4,8 or   sun,fri or jan,oct,dec etc.
+  Define range – You can define range using the hyphen like: 1-10 or 20-30 or sun-fri or feb-apr
+  Define multiple range – You can define multiple ranges with command separated like: jan-mar,jul-sep
+* common commands
+  see crontab job you have added to your crontab file
+  crontab –l
+** run specific program every thursday at 3 pm
+   00 15 * * Thu /usr/local/bin/mycronjob.sh
+** twice a day, 5am and 5 pm run
+   0 5,17 * * * /scripts/script.sh
+** every sunday at 5pm
+   0 17 * * sun  /scripts/script.sh
+** every ten minutes
+   */10 * * * * /scripts/monitor.sh  */10: means to run every 10 minutes
+** selected months run
+   * * * jan,may,aug *  /script/script.sh
+** multiple tasks in single cron
+   * * * * * /scripts/script.sh; /scripts/scrit2.sh
+** execute on reboot
+   @reboot /scripts/script.sh
+  
