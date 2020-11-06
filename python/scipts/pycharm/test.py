@@ -55,7 +55,7 @@ customer = {
 print(customer.get("name"))
 print(customer)
 '''
-
+'''
 phone = input("phone: ")
 digit_mapping = {
     "0": "zero",
@@ -73,3 +73,17 @@ output = ""
 for char in phone:
     output += digit_mapping.get(char, "!") + " "
 print(output)
+'''
+'''
+def greet_user(first_name, last_name):
+    print(f'Hello {first_name} {last_name}')
+    print('Hope your having a good day')
+
+
+greet_user('nick', 'chovan')
+'''
+
+def square(number):
+    return number * number
+
+print(square(3))
