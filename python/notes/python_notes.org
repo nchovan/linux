@@ -91,7 +91,7 @@
   	Output
 	a =000005
 	a =05
-
+	
 ** print() with file parameter
   	In Python, you can print objects to the file by specifying the file parameter
   
@@ -100,6 +100,9 @@
   	sourceFile.close()
 
   	This program tries to open the python.txt in writing mode. If this file doesn't exist, python.txt file is created and opened in writing mode.
+** print expression
+   print('*' * 10)
+   output will be **********
 * Lists
 ** create a list
   	linux_distros = ['Debian', 'Ubuntu', 'Fedora']  #If this was a list of integers or floats, there would be no quotes. Each entry is separated by a comma to ensure that they are read independently.
