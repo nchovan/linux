@@ -273,6 +273,16 @@
 ** >= (greater than or equal) 
 ** <= (less than or equal)
 
+** multi line string variable
+   email = '''
+   Hi john,
+   
+   here is our first email to you.
+  
+   thank you,
+   the support team
+
+   '''
 * Tuples
 	basically lists that cant be changed
 	random_junk = ('Bacon', 7, True, 11, 'Your mother was a hamster!',)
