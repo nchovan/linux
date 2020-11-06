@@ -20,6 +20,5 @@ contact_listing = (f'\nName: {name}'
                   f'\nAge: {str(age)}'
                   f'\nAddress: {address}'
                   f'\nEmail: {email}')
-# uses \n to return a new line and then print the word "Name:" followed by the user input defined by the variable name
 
 print(contact_listing)
