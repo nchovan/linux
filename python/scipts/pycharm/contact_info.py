@@ -1,6 +1,4 @@
-# imports the date class from datetime module
 from datetime import date
-# sets variable current_date to today's date
 current_date = date.today()
 
 # sets variable name to the user's input

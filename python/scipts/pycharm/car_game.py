@@ -1,7 +1,4 @@
-# sets varibale to empty string
 command = ""
-
-# sets begging booleans
 started = False
 stopped = True
 true = True

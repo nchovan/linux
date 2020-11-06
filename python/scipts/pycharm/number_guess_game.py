@@ -1,9 +1,5 @@
-# imports the random module
 import random
-
-# sets the variable secret_number to a random number between 1 and 20
 secret_number = random.randint(1,20)
-# sets needed variables for while loop
 guess_count = 0
 guess_limit = 5
 

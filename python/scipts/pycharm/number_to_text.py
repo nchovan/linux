@@ -1,4 +1,3 @@
-# create function to change numbers to text
 def number_to_text(message):
     # maps numbers to text
     digit_mapping = {
