@@ -1,0 +1,558 @@
+* emacs commands
+  C-x C-c (hold down ctrl, while holding control hit x then c)
+** exit
+   C-x C-c
+** newfile / open file
+   C-x C-f new_file_name \ C-x C-f /path/to/file
+** save file
+   C-x C-s
+** get back to typing mode
+   esc
+** enable org mode
+   M-x org-mode  (hold alt then hit x, bottom of screen cursor type org-mode, hit enter)
+** todo lists
+*** add new item
+    add new item: M-shift-RET (atl, m, shift, enter)
+*** close item
+    close item: C-c C-t (hold ctrl, press x then t)
+** execute weblink
+   move cursor over link and hit C-c C-o
+   
+
+* String Basics
+** user input
+  	user_input = input("Please enter some text: ")
+  	print(user_input)
+
+** print with user input
+  	name = input("What's your name? ")
+ 	print("Hello " + name + "!")
+
+** add string before printing
+  	name = input("What's your name? ")
+  	message_greeting = "Hello " + name + "!"
+  	message_compliment = name + " is a nice name."
+  	message = message_greeting + "\n " +  message_compliment  #\n is new line
+  	print(message)
+
+** print numbers with strings
+  	answer = 42   # The variable "answer" is now an integer
+  	answer = str(answer)  # Now it's a string
+  	
+	print("The answer is " + str(42)) #str() tells it to print 42 as string
+  
+	answer = 42
+  	print("The answer is %d" % answer)  # %d is a placeholder for an integer. There are other placeholders too and The % separates that string from the variable(s) that will be substituted in.
+
+** multiple placeholders
+   	first_number = 10
+   	second_number = 12.5
+   	sum = first_number + second_number
+   	print("The sum of %d and %.f is %.2f" % (first_number, second_number, sum))   #the %.2f will only print the float to 2 places after the dec
+* Common commands
+	shebang line
+	#! /usr/bin/python3
+
+	make sure .py programs are excutable
+	chmod a+x program_name.py
+
+	check you python version
+ 	python --version
+
+ 	open python interpreter (like command line)
+ 	python3
+
+* Print
+** syntax: print(*objects, sep=' ', end='\n', file=sys.stdout)
+	
+	objects - object to be printed. * indicates there may be more than one object
+	sep - objects are seperated by sep
+	end - is printed at last
+	file - must be object with strings
+
+** how print() works
+  	print("Python is fun.")
+  	a = 5
+  	# Two objects are passed
+  	print("a =", a)
+  	b = a
+  	# Three objects are passed
+  	print('a =', a, '= b')
+
+  	output
+  	Python is fun.
+  	a = 5
+  	a = 5 = b
+
+** print() with seperator and end parameters
+  	a = 5
+  	print("a =", a, sep='00000', end='\n\n\n') 	#\n - new line
+  	print("a =", a, sep='0', end='')   #sep="00000" adds 00000 between the a = and end		
+  	Output
+	a =000005
+	a =05
+	
+** print() with file parameter
+  	In Python, you can print objects to the file by specifying the file parameter
+  
+  	sourceFile = open('python.txt', 'w')
+  	print('Pretty cool, huh!', file = sourceFile)
+  	sourceFile.close()
+
+  	This program tries to open the python.txt in writing mode. If this file doesn't exist, python.txt file is created and opened in writing mode.
+** print expression
+   print('*' * 10)
+   output will be **********
+* Lists
+** create a list
+  	linux_distros = ['Debian', 'Ubuntu', 'Fedora']  #If this was a list of integers or floats, there would be no quotes. Each entry is separated by a comma to ensure that they are read independently.
+
+** navigating lists
+	index  
+   	linux_distros = ['Debian', 'Ubuntu', 'Fedora'
+   	print(linux_distros[0]) #prints zero 
+   	output: Debian
+ 
+   	#The example above returns, "Debian," because it is the first entry in the list and has an index of zero. Each entry has a value, referred to as an index, and they count up from zero going down the list
+
+** print index 
+   	linux_distros = ['Debian', 'Ubuntu', 'Fedora'
+   	print(linux_distros[0]) #prints zero index spot
+   	output: Debian
+  
+   	print(linux_distros[-2]) #would print Ubuntu because -2 mean going from bottom up twice
+
+** slicing lists
+   	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+   	debian_distros = linux_distros[:2] # [:2] means stop before index 2 or the third spot)
+   	print(debian_distros)
+   	output: ['Debian', 'Ubuntu']
+
+** slicing lists twice
+   	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+   	rh_distros = linux_distros[2:4] # this slices out from 2 to stop at 4
+   	print(rh_distros)
+   	['Fedora', 'CentOS']
+
+** finding the length
+	uses len():
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	print(len(linux_distros))
+
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	print(linux_distros[len(linux_distros) - 1])
+  
+** append
+	adds to the end of a list
+
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	linux_distros.append("Mint")
+	print(linux_distros)
+
+** pop
+	The pop() method can work in two different ways. If you leave the parenthesis empty, it works as the opposite of append(). You can also specify what element you want to remove by giving it the index of that element.
+
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	linux_distros.pop()
+	print(linux_distros)
+	this gets rid of Gentoo
+
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	linux_distros.pop(4)
+	print(linux_distros)
+	this gets rid of the 4 the index (OpenSUSE)
+
+** insert
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	linux_distros.insert(2, "Mint")
+	print(linux_distros)
+	"Mint" becomes the element at the index two and pushes the other elements back. Take a look at what's at index four now. 
+
+** remove
+	remove() works sort of like giving pop an index to remove, but instead of giving remove() an index you give it the actual value of the element
+
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	linux_distros.remove("Arch")
+	print(linux_distros)
+
+** extend
+	extend() adds two lists together. It adds the list in parenthesis to the list that it is being called on.
+
+	linux_distros = ['Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	debian_distros = ['Debian', 'Ubuntu', 'Mint']
+	linux_distros.extend(debian_distros)
+	print(linux_distros)
+	The elements from debian_distros have been added on to the end of linux_distros. 
+
+** index
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	print(linux_distros.index("Arch"))
+	prints out the index number of arch (5)
+
+** sort
+	sort a list either alphabetically or numerically
+
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	linux_distros.sort()
+	print(linux_distros)
+
+	also works with numbers:
+	numbers_to_sort = [1, 5, 8, 16, 3, 75, 4, 23, 9, 15, 8, 32]
+	numbers_to_sort.sort()
+	print(numbers_to_sort)
+
+** reverse
+	reverses the order of the list
+	
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	linux_distros.reverse()
+	print(linux_distros)
+
+	reverse alphabetical rder:
+	linux_distros = ['Debian', 'Ubuntu', 'Fedora', 'CentOS', 'OpenSUSE', 'Arch', 'Gentoo']
+	linux_distros.sort()
+	linux_distros.reverse()
+	print(linux_distros)
+
+** Multidimensional Lists
+	is a list that contains lists
+
+** Two Dimensional Lists
+	number_sets = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
+	print(number_sets[1])
+	this will print out the list index 1 (second list out of three)
+
+	number_sets = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
+	print(number_sets[0][1])
+	this will print out the 1st index of the 0 index list (4 from the first list out of three
+* Variables
+** 6 types of variables
+  	integers - whole numbers
+  	foats  - numbers with decimals
+  	string - text
+  	booleans - hold true or false values
+  	tuples - hold groups of different types of information and cannot be changed
+  	lists -  hold groups of the same type of date and can be changed at any time.
+
+** assigning variables
+  	say_hello = "hello world!" 
+	number1 = 5
+  	number 2 = 5
+  	print (number1+number2)
+
+	the_answer = 6 * 7
+ 	print (the_number)
+
+** assigning new variable
+  	a = 5
+   	print (a)
+   	1 = 10
+   	print (a)
+
+** multiple variables
+	a = b = c = 1  #asignes all three variables to 1
+  
+** comparing variables
+  	Python also gives you the ability to compare the values of variables and gives you a value of either true or false depending on the comparison
+
+** equal too 
+   	a = 6
+   	b = 2 * 3
+   	print(a == b) # "==" means equal too
+
+   	a_string = "Hello"
+   	another_string = "Hello"
+   	print(a_string == another_string)
+
+** not equal too
+   	!=   ex: "Hello" != "Hello!" 
+	<>   ex: (a<>b)
+
+** > (greater than) 
+** < (less than)
+** >= (greater than or equal) 
+** <= (less than or equal)
+
+** multi line string variable
+   email = '''
+   Hi john,
+   
+   here is our first email to you.
+  
+   thank you,
+   the support team
+
+   '''
+** input using int
+   weight = int(input('what is your weight? ')
+   this sets the variable weight as an integer instead of a string
+* Tuples
+	basically lists that cant be changed
+	random_junk = ('Bacon', 7, True, 11, 'Your mother was a hamster!',)
+
+** Using tuples
+	Tuples mostly just behave like limited lists. They can do many of the same basic things, but lack much of the more advanced functionality that modifies the contents of the list. 
+
+** navigating tuples
+	Navigating a tuple is just like navigating a list. Try accessing a couple of elements from that junk tuple. 
+
+** length of tuples
+	The len() method works on tuples too. It works exactly the way it does with both strings and lists. Just put the list in the parenthesis. 
+
+* Boolean operators
+** true and false
+	my_string = "Hello World"
+
+	my_string.isalnum()		#check if all char are numbers
+	my_string.isalpha()		#check if all char in the string are alphabetic
+	my_string.isdigit()		#test if string contains digits
+	my_string.istitle()		#test if string contains title words
+	my_string.isupper()		#test if string contains upper case
+	my_string.islower()		#test if string contains lower case
+	my_string.isspace()		#test if string contains spaces
+	my_string.endswith('d')		#test if string endswith a d
+	my_string.startswith('H')	#test if string startswith H
+
+	To see what the return value (True or False) will be, simply print it out.	
+	
+	my_string="Hello World"
+	
+	print my_string.isalnum()		#False
+	print my_string.isalpha()		#False
+	print my_string.isdigit()		#False
+	print my_string.istitle()		#True
+	print my_string.isupper()		#False
+	print my_string.islower()		#False
+	print my_string.isspace()		#False
+	print my_string.endswith('d')		#True
+	print my_string.startswith('H')		#True
+
+** and
+	The first comparison operator is and. You can use and to test in one statement and another statement are both true.
+
+	is_it_true = (3 * 4 > 10) and (5 + 5 >= 10)
+	print(is_it_true)
+
+	The code prints out True because both 3 * 4 > 10 and 5 + 5 >= 10 are true. 
+
+** or
+	The first comparison operator is and. You can use and to test in one statement and another statement are both true.
+
+	is_it_true = (3 * 4 > 10) and (5 + 5 >= 10)
+	print(is_it_true)
+
+	The code prints out True because both 3 * 4 > 10 and 5 + 5 >= 10 are true. 
+
+** Not
+	The not operator checks if something is not true. If the expression that it is evaluating is not true, not will evaluate True. That might seem weird, so here's an example.
+
+	is_it_true = not (3 * 4 > 10)
+	print(is_it_true)
+
+	Since the statement that not is evaluating is true, it returns False.
+
+* if statements 
+** if
+   if (5 ** 2 >= 25):
+	print("It's true!")
+	print("If is awesome!")
+
+** esle
+   if (5 ** 2 > 25):
+	print("Your math looks a bit off...")
+   else:
+	print("That makes sense.")
+
+** elif
+   if (5 ** 2 > 25):
+	print("The first one is right.")
+   elif(5 ** 2 = 25):
+	print("It was the second one.")
+   else:
+	print("Something went wrong.")
+
+** nesting if
+   a = 10
+   b = 15
+   c = 20
+   d = 25
+
+   if (a > b):
+	if (a + b >= d):
+		d -= c
+	elif (a + >= c):
+		c -=b
+	else:
+		b -= a
+   elif (b > c):
+	print(b - c) 
+   else:
+	print(d)
+* while loops
+  One of the simplest ways to make a program repeat the same task is to use a while loop. 
+  A while loop repeats the same block of code while a condition is true. When that condition
+  becomes false, the loop will break, and the regular flow of code will resume. 
+
+  stop a loop Ctrl+c
+** infinite while
+   
+   import time
+   while(True):
+        print("looping...")
+	time.sleep(2)
+
+	prints looping, waits 2 prints looping, waits 2 and just keep going
+
+** counting down
+   One way to stop a while loop is to use a counting variable.
+
+   count = 0
+   while(count < 10):
+	print("loop number: %d" % (count + 1))
+	count += 1
+
+   adds 1 to the count after each loop, when the count gets > 10 the loop will break/stop
+
+** break
+   You can also break a while loop from inside the loop using break.
+
+   import random
+   while(True):
+	num = random.randint(1, 10)
+	print(num)
+	
+	if(num == 7):
+		print("Stopping...")
+		break
+	else:
+		print("Still looping...")
+
+* for loops
+  for loops have a slightly different structure than while loops do. They begin with the word
+  for, which is followed by the temporary variable being created for the loop. Then there is the
+  keyword in specifying the set of data being used, followed by the data set itself and,
+  ultimately, a colon. 
+
+** with range
+   Below is an example of a for loop that uses range() and multiplies each number in it by two.
+   for x in range(1, 11):
+	print(x * 2)
+
+	it can be used to create a new list.
+
+   times_two = []
+   for x in range(1, 11):
+	times_two.append(x * 2)
+	print(x * 2)
+
+   print(times_two)
+
+   Even though you didn't start with a complete list, you can use range() to create one. To break
+   it down a bit; range() outputs each number from one to ten. Then, each number is individually
+   temporarily assigned to x. The result of x * 2 is passed to the append() method on the newly
+   created times_two list.
+
+** for with lists
+   # Create the list of distributions
+   linux_distros = ['Debian', 'Ubuntu', 'Mint', 'Fedora', 'CentOS', 'OpenSUSE', 'Slackware',
+         'Arch', 'Gentoo']
+
+   distros_caps = []
+
+   # loop through them, capitalize, insert into new 
+   for distro in linux_distros:
+	print(distro.upper())
+	distros_caps.append(distro.upper())
+
+   # print the original
+   print(linux_distros)
+   # print the new list
+   print(distros_caps)
+
+   This simple for takes each distribution name from the list, temporarily assigns it to the distro
+   variable, calls the upper() method to capitalize and print it before calling the method again
+   to append it on to the new distros_caps list. In the end, it prints out both lists. 
+* dictionaries
+  Dictionaries are lists that associate two values with one another. To think of it in terms
+  of an actual dictionary, they associate a word, or key with a definition, or value. They
+  function sort of like a list with custom indexes. 
+
+** creating dictionaries
+*** empty
+    new_dictionary = {}
+
+*** with values
+    distro_install_command = {'Debian': 'apt-get', 'Ubuntu': 'apt-get', 'Fedora': 'dnf',
+               'CentOS': 'yum', 'OpenSUSE': 'zypper', 'Arch': 'pacman', 'Gentoo': 'emerge'} 
+
+** navigating dictionaries
+   Navigating dictionaries is a lot like navigating lists. Instead of specifying an index,
+   you must specify a key to access a value. 
+
+   distro_install_command = {'Debian': 'apt-get', 
+                        'Ubuntu': 'apt-get',
+                        'Fedora': 'dnf', 
+                        'CentOS': 'yum',
+                        'OpenSUSE': 'zypper',
+                        'Arch': 'pacman',
+                        'Gentoo': 'emerge'
+   }
+
+   print(distro_install_command['Gentoo'])
+
+** adding items
+   Adding entries to a dictionary is more like defining a new variable than adding a new
+   element to a list. To do so, you must first specify the name of the dictionary that the
+   entry is being added to, then the key. Then, you can set that key equal to its value.
+
+   distro_install_command = {}
+   distro_install_command['Debian'] = 'apt-get'
+
+** deleting items
+   The easiest way to remove entries from a dictionary is to use the del operator
+
+   distro_install_command = {'Debian': 'apt-get',
+                        'Ubuntu': 'apt-get',
+                        'Fedora': 'dnf',
+                        'CentOS': 'yum',
+                        'OpenSUSE': 'zypper',
+                        'Arch': 'pacman',
+                        'Gentoo': 'emerge'
+   }
+   del distro_install_command['Ubuntu']
+   print(distro_install_command)
+* functions
+** creating function
+   use def to define the function name and then tell the fucntion what to do
+
+   def print_hello():
+	print("Hello World!")
+
+** calling a fucntion
+   Using a function is called calling it. You always call a function by its
+   name. So, take a look at the function from before and call it to see exactly what it does.
+
+   def print_hello():
+	print("Hello World!")
+
+   print_hello()
+
+** Passing Data To Functions
+   Using functions without giving them anything to work with only utilizes a fraction
+   of their true capabilities. Functions are designed to take in data, manipulate it,
+   and return it in a changed form. 
+
+   def square(x):
+	return x ** 2 
+
+   numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+   for number in numbers:
+	print(square(number))
+
+
+
+   def multiply_numbers(x, y):
+	return x * y
+
+   print(multiply_numbers(5, 4))
