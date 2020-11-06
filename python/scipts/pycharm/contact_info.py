@@ -16,7 +16,7 @@ age = current_date.year - int(dob[6:10])
 # uses a formatted string (f) to print results in an easier to read code file,
 # this uses place holders {} for the variable
 contact_listing = (f'\nName: {name}'
-                  f'\nDate fo birth: {dob}'
+                  f'\nDate of birth: {dob}'
                   f'\nAge: {str(age)}'
                   f'\nAddress: {address}'
                   f'\nEmail: {email}')
