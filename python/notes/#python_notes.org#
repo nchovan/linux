@@ -556,3 +556,120 @@
 	return x * y
 
    print(multiply_numbers(5, 4))
+* exceptions
+  Exceptions are errors that crash our programs. They often happen because of bad input or
+  programming errors. It’s our job to anticipate and handle these exceptions to prevent our
+  programs from cashing.  
+  
+  try:    
+       age = int(input(‘Age: ‘))   
+       income = 20000   
+       risk = income / age 
+       print(age)
+  except ValueError:
+       print(‘Not a valid number’)
+  except ZeroDivisionError:
+       print(‘Age cannot be 0’)
+* classes
+  define new types, cap first letter of each word no spaces
+ 
+  class Point: 
+       def__init__(self, x, y):  this is a constructor, self references the current object        
+            self.x = x       
+	    self.y = y 
+       def move(self): 
+  print(“move”) 
+
+  When a function is part of a class, we refer to it as a method.  Classes define templates
+  or blueprints for creating objects. An object is an instance of a class. Every time we create
+  a new instance, that instance follows the structure we define using the class.  
+  
+  point1 = Point(10, 5)
+  point2 = Point(2, 4)
+
+  __init__ is a special method called constructor. It gets called at the time of creating new
+   objects. We use it to initialize our objects.
+
+  class Person:
+        def __inti__(self, name):
+	     self.name = name
+
+        def talk(self):
+            print(f"Hi, i am {self.name} ")
+
+
+  john = Person("john smith" )
+  john.talk()
+
+  output will be Hi, i am john smith
+* Inheritance
+  used to not repeat code
+
+** repetative code
+   class Dog:
+       def walk(self):
+            print("walk")
+
+   class Cat:
+       def walk("self")
+            print("walk")
+
+** non-repetative code
+   class mammal:
+        def walk(self):
+      	    print("walk")
+
+
+   class Dog(Mammal):  now the dog class will have all def from mammal
+        pass           pass is used because python doesnt like empty classes
+
+
+  class Cat(Mammal):
+        def meow(self):
+	     print*"meow")
+
+
+   dog1 = Dog()
+   dog1.walk()
+   output will be walk
+
+   cat1 = Cat()
+   cat1.meow()
+   output will be meow
+* modules
+  file with python code to better organize our code
+
+** creating modules
+   start a new file, example converters.py
+
+** adding to module
+   just put the code into the module file
+   example:
+   def lbs_to_kg(weight):
+        return weight * .045
+
+
+   def kg_to_lbs(weight):
+        return weight / .045
+
+** import module into current file
+   at the top of the file
+   import converters
+
+** using inported modules
+   import converters
+
+   print(converters.kg_to_lbs(70))
+   output will be 155.555555555555554
+
+** import spacific function from module
+   from converters import kg_to_lbs
+
+   this will allow you to call the function without having to put converters. before it
+   example:
+   from converters import kg_to_lbs
+
+   print(kg_to_lbs(70))
+   
+
+

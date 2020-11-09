@@ -283,6 +283,9 @@
    the support team
 
    '''
+** input using int
+   weight = int(input('what is your weight? ')
+   this sets the variable weight as an integer instead of a string
 * Tuples
 	basically lists that cant be changed
 	random_junk = ('Bacon', 7, True, 11, 'Your mother was a hamster!',)
